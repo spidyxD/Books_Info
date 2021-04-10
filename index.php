@@ -1,5 +1,5 @@
 <?php
     session_start();
-    require('/books/PHPFramex.php');
-    require('/books/routes.php')
+    require('PHPFramex.php');
+    require('routes.php')
 ?>

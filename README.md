@@ -1,2 +1,2 @@
-# Books Info
- Simple test
+# PHP Framex
+A minimal PHP framework
