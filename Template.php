@@ -165,6 +165,6 @@ function view($filename,$variables=[]) {
     foreach ($variables as $key => $value) {
       $template->assign($key,$value);
     }
-    return $template->parse('books/views/'.$filename.'.html');
+    return $template->parse('views/'.$filename.'.html');
 }
 ?>
