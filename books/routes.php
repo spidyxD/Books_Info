@@ -1,18 +1,46 @@
 <?php
     
-
 	Route::get('/', function () { 
 	return view('home'); 
 	});
 
-	
-	Route::get('/Book1', function () { return view('Book1'); });
-	
-	Route::get('/Book2', function () { return view('Book2'); });
-	
-	Route::get('/Book3', function () { return view('Book3'); });
+// ------------- Views ----------------
+	//Route::get('/Books', function () { return view('Books'); });
+	//Route::get('/Authors', function () { return view('Authors'); }); 
+	//Route::get('/Publishers', function () { return view('Publishers'); });
+//------------------------------------
+	require_once('model/Book.php');
+    
+	Route::get('/Books', function() {
+	   return view('Books',
+		 ['books'=>Book::all(),
+		  'title'=>'Books list']);
+	});
 
-	Route::get('/Book4', function () { return view('Book4'); });
+	require_once('model/Author.php');
+    
+	Route::get('/Authors', function() {
+	   return view('Authors',
+		 ['authors'=>Author::all(),
+		  'title'=>'Authors list']);
+	});
 
-	Route::dispatch();
+	require_once('model/Publisher.php');
+    
+	Route::get('/Publishers', function() {
+	   return view('Publishers',
+		 ['publishers'=>Publisher::all(),
+		  'title'=>'Publishers list']);
+	});
+//------------------------------------
+//Route::get('/Book', function () { return view('Book'); });
+//Route::get('/Author', function () { return view('Author'); });
+//Route::get('/Publisher', function () { return view('Publisher'); });
+// ------------- Controllers ----------------
+Route::resource('Book', 'BookController');
+Route::resource('Author', 'AuthorController');
+Route::resource('Publisher', 'PublisherController');
+
+Route::dispatch();
+
 ?>
