@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- file: views/books.php -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{title}}></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/css/normalize.css">
+<link rel="stylesheet" href="/css/skeleton.css">
+ <!--Import Google Icon Font-->
+ <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<!--Let browser know website is optimized for mobile-->
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<header>
+  <nav>
+    <div class="nav-wrapper">
+      <div class="col s12">
+        <a href="/" class="breadcrumb">Home</a>
+        <a href="/Books" class="breadcrumb">Books</a>
+        <a href="/Authors" class="breadcrumb">Authors</a>
+        <a href="/Publishers" class="breadcrumb">Publishers</a>       
+      </div>
+    </div>
+  </nav>
+</header>
+<body>
+ <div class="container">
+  <div class="row">
+   <div class="eleven column" style="margin-top: 10%">
+     <h2>{{title}}</h2>
+     <table>
+      <tr>
+          <th>Publisher</th>
+          <th>Country</th>
+          <th>Founded</th>
+          <th>Genere</th>
+        </tr>
+       {{#publishers}}
+      <tr>
+          <td>{{publisher}}</td>
+          <td>{{country}}</td>
+          <td>{{founded}}</td>
+          <td>{{genere}}</td>
+      </tr>
+      {{/publishers}}
+     </table>
+    </div>
+   </div>
+ </div>
+
+</body>
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col l6 s12">
+        <h5 class="white-text">Roger Amador Villagra</h5>
+        <p class="grey-text text-lighten-4">Programacion Web 2021</p>
+      </div>
+      
+    </div>
+  </div>
+  <div class="footer-copyright">
+    <div class="container">
+    © 2021 Copyright 
+    <a class="grey-text text-lighten-4 right" href="https://github.com/spidyxD/Books_Info">Git Repo</a>
+    </div>
+  </div>
+</footer>
+</html>
